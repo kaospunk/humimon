@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'digi';
+  src: url('DS-DIGII.TTF');
+}
+#container
+{
+    height:250;
+    width:250;
+    position:relative;
+}
+
+#image
+{
+    position:absolute;
+    left:0;
+    top:0;
+}
+#temp
+{
+    z-index:100;
+    position:absolute;
+    color:181818;
+    font-family: 'digi';
+    font-size:37;
+    left:42px;
+    top:62px;
+}
+#humidity
+{
+    z-index:100;
+    position:absolute;
+    color:181818;
+    font-family: 'digi';
+    font-size:37;
+    left:128px;
+    top:62px;
+}
+#date
+{
+    z-index:100;
+    position:absolute;
+    left: 100px;
+    top: 240px;
+}
