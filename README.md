@@ -1,4 +1,4 @@
-humimon
+humimon - Your virtual hygrometer
 =======
 
 This project provides both real-time monitoring/alerting of temperature and humidity as well as a simple web interface for viewing this in a graphical manner. For those of us with humidors without a glass case knowing what the current temp or rh levels is difficult without opening the lid and checking and also causing fluctuations in these values. Also, without keeping an eye on these values all the time manually you run the risk of dead sticks due to drying out or beetles. Hopefully this makes that risk much less by providing a way to monitor all the time and alert when values go out of range.
