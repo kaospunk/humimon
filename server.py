@@ -20,7 +20,7 @@ class MyHandler(AdvancedHTTPServerRequestHandler):
 		lines = a.read().split('\n')
 		values = lines[-2].split(',')
 		date = time.strftime('%m/%d/%Y %H:%M:%S',time.localtime(float(values[0])))
-		self.wfile.write('{"temp":' + values[1] + ',"humidity":' + values[2] + ',"date":"' + date + '"}')
+		self.wfile.write('{"temp":"' + values[1] + '","humidity":"' + values[2] + '","date":"' + date + '"}')
 		a.close()
 
 def main():
