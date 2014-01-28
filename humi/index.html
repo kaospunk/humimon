@@ -1,19 +1,20 @@
 <html><head><title>Virtual Hygrometer</title><script src="http://code.jquery.com/jquery-2.0.3.min.js"></script><link href="humi.css" rel="stylesheet" type="text/css"></head><body>
-<script language="JavaScript"> 
-setInterval( "update();", 2000 ); 
-$(function() { 
-       update = function(){ 
-    		$.get("get_data",function(data){
-			$("#temp").html(data.temp)
-			$("#humidity").html(data.humidity)
-			$("#date").html(data.date)
-    		},"json");
-       } 
-}); 
+<script language="JavaScript">
+$(document).ready(function()
+{
+       function update() {
+                $.get("get_data",function(data){
+                        $("#temp").html(data.temp)
+                        $("#humidity").html(data.humidity)
+                        $("#date").html(data.date)
+                },"json");
+       }
+       update();
+       setInterval(update, 10000 );
+});
 </script>
 <div id="container"><img id="image" src="hygro.jpg"/>
 <p id="temp"></p>
 <p id="humidity"><p>
 <p id="date"></p>
 </div></body></html>
-
