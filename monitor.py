@@ -54,15 +54,14 @@ while(True):
       		if (now - start).seconds> 10:
 			try:
 				print_debug("Trying to kill pid {0}".format(ada_proc.pid))
-        			os.kill(ada_proc.pid, signal.SIGKILL)
-        			os.waitpid(ada_proc.pid, os.WNOHANG)
+				ada_proc.kill()
 			except:
 				print_debug("Unable to kill process")
 			continue
 	output, err = ada_proc.communicate()
 	matches = re.search("Temp =\s+([0-9.]+)", output)
 	if (not matches):
-		time.sleep(3)
+		time.sleep(10)
 		continue
         temp = float(matches.group(1))
 	temp = (temp * 9/5) + 32
@@ -70,7 +69,7 @@ while(True):
         # search for humidity printout
         matches = re.search("Hum =\s+([0-9.]+)", output)
         if (not matches):
-		time.sleep(3)
+		time.sleep(10)
 		continue
         humidity = float(matches.group(1))
 
@@ -95,4 +94,4 @@ while(True):
 	else:
 		humidity_count = 0
 
-	time.sleep(3)
+	time.sleep(10)
