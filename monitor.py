@@ -7,6 +7,7 @@ import time
 import datetime
 import os
 import signal
+import smtplib
 
 # Path to location of binary from the Adafruit repository
 DHT_BIN = "Adafruit-Raspberry-Pi-Python-Code/Adafruit_DHT_Driver/Adafruit_DHT"
@@ -20,9 +21,11 @@ PIN = "4"
 DATA_FILE = "humidor_data"
 EMAIL_ADDRESS = ""
 DEBUG = True
+ALERT = False
 
 def alert(temp,humidity):
-	import smtplib
+        if not ALERT:
+                return
 
 	fromaddr = EMAIL_ADDRESS 
 	toaddrs = [EMAIL_ADDRESS]
